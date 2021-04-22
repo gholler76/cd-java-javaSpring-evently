@@ -1,4 +1,4 @@
-package com.holler.authentication;
+package com.holler.evently;
 
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;

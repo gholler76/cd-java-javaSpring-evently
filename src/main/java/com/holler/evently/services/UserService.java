@@ -1,12 +1,13 @@
-package com.holler.authentication.services;
+package com.holler.evently.services;
 
 import java.util.Optional;
 
 import org.mindrot.jbcrypt.BCrypt;
 import org.springframework.stereotype.Service;
 
-import com.holler.authentication.models.User;
-import com.holler.authentication.repositories.UserRepository;
+import com.holler.evently.models.Event;
+import com.holler.evently.models.User;
+import com.holler.evently.repositories.UserRepository;
 @Service
 public class UserService {
     private final UserRepository userRepository;
@@ -19,6 +20,10 @@ public class UserService {
     public User registerUser(User user) {
         String hashed = BCrypt.hashpw(user.getPassword(), BCrypt.gensalt());
         user.setPassword(hashed);
+        return userRepository.save(user);
+    }
+    
+    public User updateUser(User user) {
         return userRepository.save(user);
     }
 
@@ -54,5 +59,7 @@ public class UserService {
             }
         }
     }
+    
+    
 }
 

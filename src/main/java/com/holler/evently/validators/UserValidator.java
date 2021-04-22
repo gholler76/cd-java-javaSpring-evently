@@ -1,10 +1,10 @@
-package com.holler.authentication.validators;
+package com.holler.evently.validators;
 
 import org.springframework.stereotype.Component;
 import org.springframework.validation.Errors;
 import org.springframework.validation.Validator;
 
-import com.holler.authentication.models.User;
+import com.holler.evently.models.User;
 @Component
 public class UserValidator implements Validator {
     
